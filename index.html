@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ... (head section remains exactly the same) ... -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxe Beauty - Shop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- ==== HOME PAGE ==== -->
+        <main id="home-page" class="page active">
+            <header>
+                <h1>Luxe Beauty</h1>
+                <p>Discover Your Natural Glow</p>
+
+                <!-- **** NEW TIMER CONTAINER **** -->
+                <div class="deal-timer-container">
+                    <i class="fas fa-stopwatch"></i>
+                    <span>Flash Deal Ends In:</span>
+                    <div class="timer" id="countdown-timer">
+                        <span id="minutes">00</span>:<span id="seconds">00</span>
+                    </div>
+                </div>
+
+            </header>
+            
+            <section class="product-section">
+                <h2>Skincare Essentials</h2>
+                <div class="product-grid"></div>
+            </section>
+             <section class="product-section">
+                <h2>Makeup Must-Haves</h2>
+                <div class="product-grid-makeup"></div>
+            </section>
+        </main>
+
+        <!-- ... (Rest of the HTML - Bag Page, Address Page, Nav - remains exactly the same) ... -->
+        <!-- ==== BAG / CART PAGE ==== -->
+        <section id="bag-page" class="page">
+            <header>
+                <h1>Your Shopping Bag</h1>
+            </header>
+            <div id="bag-items-container">
+                <p class="empty-bag-message">Your bag is empty.</p>
+            </div>
+            <div class="bag-summary">
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span id="subtotal-price">₹0.00</span>
+                </div>
+                 <div class="summary-row">
+                    <span>Taxes & Fees</span>
+                    <span id="taxes-price">₹0.00</span>
+                </div>
+                <hr>
+                <div class="summary-row total-row">
+                    <span>Total</span>
+                    <span id="total-price-bag">₹0.00</span>
+                </div>
+                <button id="checkout-btn" class="pay-btn disabled">Proceed to Address</button>
+            </div>
+        </section>
+        <!-- ==== ADDRESS PAGE ==== -->
+        <section id="address-page" class="page">
+             <header class="address-header">
+                <button id="back-to-bag-btn"><i class="fas fa-arrow-left"></i> Back</button>
+                <h1>Shipping Address</h1>
+            </header>
+             <form id="address-form" novalidate>
+                 <!-- (form contents same) -->
+                 <div class="form-group"><label for="name">Full Name</label><input type="text" id="name" name="name" placeholder="Enter your full name" required></div>
+                 <div class="form-group"><label for="phone">Phone Number</label><input type="tel" id="phone" name="phone" placeholder="10-digit mobile number" required pattern="[0-9]{10}"></div>
+                 <div class="form-group"><label for="address">Address (House No, Street)</label><input type="text" id="address" name="address" placeholder="e.g., 123, Rose Villa" required></div>
+                 <div class="form-group-inline"><div class="form-group"><label for="city">City</label><input type="text" id="city" name="city" placeholder="e.g., Mumbai" required></div><div class="form-group"><label for="pincode">Pincode</label><input type="text" id="pincode" name="pincode" placeholder="e.g., 400001" required pattern="[0-9]{6}"></div></div>
+                 <div id="form-error-msg" class="error-message"></div>
+                 <div class="order-summary-final">
+                     <h2>Order Summary</h2>
+                     <div class="summary-row"><span>Items Total</span><span id="final-subtotal">₹0.00</span></div>
+                     <div class="summary-row total-row"><span>Amount to Pay</span><span id="final-total">₹0.00</span></div>
+                 </div>
+                 <button type="submit" id="final-pay-btn" class="pay-btn">Pay with UPI</button>
+            </form>
+        </section>
+    </div>
+    <!-- ==== BOTTOM NAVIGATION ==== -->
+    <nav class="bottom-nav">
+        <button id="nav-home" class="nav-btn active"><i class="fas fa-home"></i><span>Home</span></button>
+        <button id="nav-bag" class="nav-btn"><i class="fas fa-shopping-bag"></i><span class="bag-count">0</span><span>Bag</span></button>
+    </nav>
+    <script src="script.js"></script>
+
+</body>
+</html>
